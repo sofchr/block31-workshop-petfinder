@@ -29,11 +29,13 @@ app.get('/api/v1/pets', (req, res) => {
 app.get('/api/v1/pets/owner', (req, res) => {
     // get the owner from the request
     const { owner } = req.query
+    // link will look like http://localhost:8080/api/v1/pets/owner?owner=John
+
     // find the pet in the pets array
     const pet = pets.find(pet => pet.owner === owner);
     // send the pet as a response
     res.send(pet)
-    // link will look like http://localhost:8080/api/v1/pets/owner?owner=John
+
 });
 
 // get pet by name
